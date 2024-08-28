@@ -1,22 +1,31 @@
-const display= document.getElementById('display');
+let display= document.getElementById('display');
+let buttons= document.querySelectorAll('button');
 
-function appendToDisplay(input){
-    display.value+=input;
-}
 
-function clearDisplay(){
-    display.value='';
-}
+let string='';
+let arr = Array.from(buttons)
 
-function erase(){
-    display.value= '';
-}
-
-function calculate(){
-   try{
-    display.value= eval(display.value);
-   }
-   catch(error){
-         display.value='Error';
-   }
-}
+arr.forEach(button=>{
+    button.addEventListener('click',(e)=>{
+        if(e.target.innerHTML =='='){
+            try{string=eval(string)
+            display.value=string;}
+            catch(error){
+                display.value='Error';
+                string='';
+            }
+        }
+        else if(e.target.innerHTML =='C'){
+            string='';
+            display.value=string;
+        }
+        else if(e.target.innerHTML =='&lt;='){
+            string=string.substring(0,string.length - 1);
+            display.value=string;
+        }
+        else{
+            string+=e.target.innerHTML;
+            display.value=string;
+        }
+    })
+})
