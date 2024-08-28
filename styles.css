@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
 body{
     margin: 0;
     display: flex;
@@ -21,6 +23,7 @@ body{
     background-color:#d4d4d4;
     color: #000000;
     transition: background-color 0.3s;
+    font-family: 'Cabin',sans-serif;
 }
 button{
     width: 100px;
@@ -31,6 +34,7 @@ button{
     font-size: 30px;
     cursor: pointer;
     text-align: center;
+    font-family: 'Cabin',sans-serif;
 }
 #keys{
     display: grid;

@@ -9,11 +9,11 @@ arr.forEach(button=>{
     button.addEventListener('click',(e)=>{
         if(e.target.innerHTML =='='){
             try{string=eval(string)
-            display.value=string;}
+                    display.value=string;}
             catch(error){
                 display.value='Error';
                 string='';
-            }
+                }
         }
         else if(e.target.innerHTML =='C'){
             string='';
